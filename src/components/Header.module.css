@@ -1,0 +1,20 @@
+.header{
+    background: var(--gray-700);
+    height: 12.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img{
+    margin-right: 12px;
+}
+
+.header strong{
+    font-size: 2.5rem;
+    color: var(--blue);
+}
+
+.header strong:nth-child(3){
+    color:var(--purple-dark)
+}
