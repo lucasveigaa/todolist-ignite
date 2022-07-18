@@ -29,7 +29,7 @@ export function InputTask({ newTask, setNewTask, tasks, setTasks }: TaskProps) {
         placeholder="Adicione uma nova tarefa"
       />
       <button type="submit">
-        Criar <img src={iconPlus} />
+        Criar <img src={iconPlus}/>
       </button>
     </form>
   );
