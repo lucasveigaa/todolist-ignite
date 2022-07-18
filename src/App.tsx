@@ -13,7 +13,7 @@ function App() {
     <>
       <Header/>
       <InputTask tasks={tasks} setTasks={setTasks} newTask={newTask} setNewTask={setNewTask}/>
-      <FeedTasks/>
+      <FeedTasks tasks={tasks} setTasks={setTasks}/>
     </>
       
   )

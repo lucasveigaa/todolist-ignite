@@ -1,32 +1,52 @@
 import style from "./FeedTasks.module.css";
 import { Trash } from 'phosphor-react'
+import { ChangeEvent, useState } from "react";
 
-export function FeedTasks() {
+interface FeedProps {
+  tasks: string[];
+  setTasks: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export function FeedTasks({ tasks, setTasks }: FeedProps) {
+
+  const [countChecks, setCountChecks] = useState(0)
+
+  function handleDeleteTask(taskToDelet: string){
+      const tasksWithoutDeletedOne = tasks.filter(task => {
+        return task !== taskToDelet
+      })
+      setTasks(tasksWithoutDeletedOne)
+  }
+
+  function handleChecked(event: ChangeEvent<HTMLInputElement>){
+    if (event.target.checked) {
+      setCountChecks(countChecks + 1)
+    }
+  }
+
   return (
     <main className={style.main}>
       <header className={style.header}>
         <div>
           <strong>Tarefas criadas</strong>
-          <span>5</span>
+          <span>{tasks.length}</span>
         </div>
         <div>
           <strong>Concluídas</strong>
-          <span>2 de 5</span>
+          <span>{countChecks} de {tasks.length}</span>
         </div>
       </header>
 
-      <div className={style.divInput}>
-        <input type='checkbox' id='tarefa1' name='tarefa1'/>
-        <label htmlFor='tarefa1'></label>
-        <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-        <button><Trash/></button>
-      </div>
-      <div className={style.divInput}> 
-        <input type='checkbox' id='tarefa2' name='tarefa2'/>
-        <label htmlFor='tarefa2'></label>
-        <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-        <button><Trash/></button>
-      </div>
+      {tasks.map(task => {
+        return(
+          <div key={task} className={style.divInput}>
+            <input onChange={handleChecked} type='checkbox' id={task} name={task}/>
+            <label htmlFor={task}></label>
+            <span>{task}</span>
+            <button onClick={() => handleDeleteTask(task)}><Trash/></button>
+          </div>
+        )
+      })} 
       
     </main>
   );
