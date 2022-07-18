@@ -1,12 +1,12 @@
 
-.divInput {
+.formInput {
     margin-top: -1.6875rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.divInput input {
+.formInput input {
     box-sizing: border-box;
     color: var(--gray-100);
     padding: 1rem;
@@ -17,11 +17,11 @@
     margin-right: 0.5rem;
 }
 
-.divInput input:focus {
+.formInput input:focus {
     border: 1px solid var(--purple-dark);
 }
 
-.divInput button {
+.formInput button {
     gap: 0.5rem;
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@
     transition: background-color 0.1s;
 }
 
-.divInput button:hover {
+.formInput button:hover {
     background: var(--blue);
     cursor: pointer;
 }
@@ -43,7 +43,7 @@
         font-size: 87.5%;
     }
 
-    .divInput {
+    .formInput {
         max-width: 90%;
         margin-right: auto;
         margin-left: auto;
