@@ -71,6 +71,7 @@
 .divInput label {
     height: 1.5rem;
     width: 1.5rem;
+    padding-right: 1.5rem;
     background-image: url('../assets/inputFalseNoHover.svg');
 }
 
@@ -99,4 +100,5 @@
         margin-right: auto;
         margin-left: auto;
     }
+
 }

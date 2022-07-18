@@ -20,6 +20,7 @@ export function InputTask({ newTask, setNewTask, tasks, setTasks }: TaskProps) {
     const CurrentTasks = [...tasks, newTask];
     setTasks([...tasks, newTask]);
     localStorage.setItem("@taskList", JSON.stringify(CurrentTasks));
+    setNewTask('')
   }
 
   return (
