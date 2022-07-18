@@ -16,6 +16,7 @@ export function FeedTasks({ tasks, setTasks }: FeedProps) {
         return task !== taskToDelet
       })
       setTasks(tasksWithoutDeletedOne)
+      localStorage.setItem("@taskList", JSON.stringify(tasksWithoutDeletedOne))
   }
 
   function handleChecked(event: ChangeEvent<HTMLInputElement>){

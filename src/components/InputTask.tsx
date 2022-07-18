@@ -17,7 +17,9 @@ export function InputTask({ newTask, setNewTask, tasks, setTasks }: TaskProps) {
   function handleNewTask(event: FormEvent) {
     event.preventDefault();
 
+    const CurrentTasks = [...tasks, newTask];
     setTasks([...tasks, newTask]);
+    localStorage.setItem("@taskList", JSON.stringify(CurrentTasks));
   }
 
   return (
@@ -29,7 +31,7 @@ export function InputTask({ newTask, setNewTask, tasks, setTasks }: TaskProps) {
         placeholder="Adicione uma nova tarefa"
       />
       <button type="submit">
-        Criar <img src={iconPlus}/>
+        Criar <img src={iconPlus} />
       </button>
     </form>
   );
